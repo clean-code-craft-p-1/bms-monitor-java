@@ -14,7 +14,10 @@ jobs:
         distribution: 'temurin'
         java-version: '21'
 
-    - name: Build and Collect coverage
+    - name: Build
+      run: mvn compile
+
+    - name: Run and Collect coverage
       run: mvn test jacoco:report
 
     - name: Upload coverage
