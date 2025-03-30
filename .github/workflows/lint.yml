@@ -21,11 +21,7 @@ jobs:
 
       - name: Checkstyle
         run: java -jar checkstyle.jar -c /google_checks.xml $(find . -name "*.java")
-        continue-on-error: true
   
       - name: PMD
         run: |
-          ./pmd-bin-6.55.0/bin/run.sh pmd -d tshirts/ -R rulesets/java/quickstart.xml
-          ./pmd-bin-6.55.0/bin/run.sh pmd -d misaligned/ -R rulesets/java/quickstart.xml
-          ./pmd-bin-6.55.0/bin/run.sh pmd -d weatherreport/ -R rulesets/java/quickstart.xml
-        continue-on-error: true
+          ./pmd-bin-6.55.0/bin/run.sh pmd -d . -R rulesets/java/quickstart.xml
