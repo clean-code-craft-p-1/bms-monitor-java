@@ -2,7 +2,8 @@ package vitals;
 
 
 public abstract class VitalsChecker {
-  static boolean vitalsOk(float temperature, float pulseRate, float spo2) throws InterruptedException {
+  static boolean vitalsOk(float temperature, float pulseRate, float spo2) 
+      throws InterruptedException {
     if (temperature > 102 || temperature < 95) {
       System.out.println("Temperature is critical!");
       for (int i = 0; i < 6; i++) {
